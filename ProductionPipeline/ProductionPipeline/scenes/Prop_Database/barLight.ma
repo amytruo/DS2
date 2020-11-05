@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
-//Name: barLight_final.ma
-//Last modified: Thu, Nov 05, 2020 09:51:25 AM
+//Name: barLight.ma
+//Last modified: Thu, Nov 05, 2020 04:45:27 PM
 //Codeset: 1252
 requires maya "2020";
 requires -nodeType "renderSetup" -nodeType "lightItem" -nodeType "lightEditor" "renderSetup.py" "1.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "93BEF490-4239-5CE7-D193-5AA9D7A249CE";
+fileInfo "UUID" "5769093D-4957-22FA-4160-B886C78F1940";
 createNode transform -n "barLight_grp";
 	rename -uid "FDD6316B-4773-96AD-7E3D-2FBBB8081C3C";
 createNode transform -n "POS" -p "barLight_grp";
@@ -2461,23 +2461,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "bottom";
-	rename -uid "B7B14529-41E6-88E4-9CE4-7CA627BD51D3";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 -1000.1 0 ;
-	setAttr ".r" -type "double3" 90 0 0 ;
-createNode camera -n "bottomShape" -p "bottom";
-	rename -uid "91ED3DF7-4BA0-AEAF-E1A6-32B59E40042D";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
-	setAttr ".imn" -type "string" "bottom1";
-	setAttr ".den" -type "string" "bottom1_depth";
-	setAttr ".man" -type "string" "bottom1_mask";
-	setAttr ".hc" -type "string" "viewSet -bo %camera";
-	setAttr ".o" yes;
-	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -n "DropLight_light";
 	rename -uid "090CB7C1-4479-967A-E8D8-CC89BA97EE3C";
 	setAttr ".r" -type "double3" -90 0 0 ;
@@ -2493,22 +2476,22 @@ createNode aiAreaLight -n "DropLight_lightShape" -p "DropLight_light";
 	setAttr ".aal" -type "attributeAlias" {"exposure","aiExposure","normalize","aiNormalize"
 		} ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "4460DD4B-4C4C-4BE5-B2B5-E1B08CEDAB57";
+	rename -uid "C5F57741-4C87-3C86-2116-89BD3F083C08";
 	setAttr -s 6 ".lnk";
 	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C8852422-4B6F-689E-A383-B19C4EC25BD9";
+	rename -uid "7AE22004-4997-7964-1BAC-F8B8CC420117";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C84ED62F-4689-F45E-E0E1-C6B3EC8283EE";
+	rename -uid "2BC78179-4DD0-729B-CA8D-988017B09FAD";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "7514C2BB-47F6-298F-151D-399F5B6EA4FE";
+	rename -uid "29CCA453-4413-A936-786E-92989015A69D";
 	setAttr ".cdl" 4;
 	setAttr -s 5 ".dli[1:4]"  1 2 3 4;
 	setAttr -s 4 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "B0F87E82-47BE-02D3-06F4-68B886788EDC";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "2F27D45D-4A2B-A926-6361-F8B70904A5DA";
+	rename -uid "C3B9B87E-456D-FC1E-C592-3D913E0A34A7";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "2B5EBF30-44A0-68F7-776C-7D94E021008C";
 	setAttr ".g" yes;
@@ -2783,4 +2766,4 @@ connectAttr "checker1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "checker2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "DropLight_light.iog" ":defaultLightSet.dsm" -na;
-// End of barLight_final.ma
+// End of barLight.ma
