@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
-//Name: bar_ready.ma
-//Last modified: Thu, Nov 05, 2020 03:43:56 PM
+//Name: bar.ma
+//Last modified: Thu, Nov 05, 2020 06:06:53 PM
 //Codeset: 1252
 requires maya "2020";
 requires "stereoCamera" "10.0";
@@ -15,7 +15,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "E6424E1F-4821-D931-D409-3BB42C1F7234";
+fileInfo "UUID" "CADC8BFE-4FBE-F667-C460-6FA2920057DA";
 fileInfo "license" "education";
 createNode transform -n "bar_grp";
 	rename -uid "7F3C35DA-436C-29EA-A221-56A60322AC56";
@@ -27,10 +27,11 @@ createNode transform -n "ADJ" -p "MOV";
 	rename -uid "6A2A7914-4898-5E84-981E-E1856E0211B4";
 createNode transform -n "DO_NOT_TOUCH" -p "ADJ";
 	rename -uid "CF0659C2-4077-6B6F-32F8-D2AD34F746B8";
+	setAttr ".s" -type "double3" 1.0780853403881479 1.0780853403881479 1.0780853403881479 ;
 createNode transform -n "top_geo" -p "DO_NOT_TOUCH";
 	rename -uid "C4E241BB-4B56-94F1-FFB4-C1AFFCE91A60";
-	setAttr ".rp" -type "double3" 0 9.4911652142222227 -0.059037363609185628 ;
-	setAttr ".sp" -type "double3" 0 9.4911652142222227 -0.059037363609185628 ;
+	setAttr ".rp" -type "double3" 0 9.4911652142222227 -0.059037363609185635 ;
+	setAttr ".sp" -type "double3" 0 9.4911652142222227 -0.059037363609185635 ;
 createNode mesh -n "top_geoShape" -p "top_geo";
 	rename -uid "815A2CA3-479A-8A47-CE91-74B294C77D07";
 	setAttr -k off ".v";
@@ -734,8 +735,8 @@ createNode mesh -n "bottom_geoShape" -p "bottom_geo";
 createNode transform -s -n "persp";
 	rename -uid "D1965EFB-419A-4DE5-60F2-AE87F404CDCA";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 29.983346749331389 34.113306931745605 -51.824028002322102 ;
-	setAttr ".r" -type "double3" -24.338352719855713 -2719.8000000001671 0 ;
+	setAttr ".t" -type "double3" -46.132413193013733 11.437519958663295 -30.323271643666025 ;
+	setAttr ".r" -type "double3" -3.9383527198178498 -2642.1999999999252 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "7DACF0A8-47F9-C37D-380B-4B97A8CD92E6";
 	setAttr -k off ".v" no;
@@ -797,22 +798,22 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "73988CAF-4B56-F3E5-97F7-4FAE8887D917";
+	rename -uid "E1B876EB-44F3-5408-0C34-FABCEC417BA5";
 	setAttr -s 54 ".lnk";
 	setAttr -s 54 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "1BA6F920-4D2D-D487-8560-93B13133338D";
+	rename -uid "0BB94800-4C77-E0EE-30F8-388260FB2E5C";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D594B367-4C24-5625-828C-FA80A5A05A35";
+	rename -uid "20AB345A-4FC0-AB4F-BBE1-948AE22B27B8";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "182F7642-460F-AE68-97E8-F3A813E947E7";
+	rename -uid "EEA61683-400C-E69F-24AD-BD867E175696";
 	setAttr ".cdl" 1;
 	setAttr -s 3 ".dli[1:2]"  4 1;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "7D2534AB-4942-6791-269E-F3B6FD1E8E5A";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A9C301FA-4F11-7486-ED13-09A26D829939";
+	rename -uid "8291D2EF-4A5E-9BDC-083D-5BA782A56759";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "ACD587B4-45D1-1FBE-90AB-3A81491142DF";
 	setAttr ".g" yes;
@@ -18375,4 +18376,4 @@ connectAttr "bar_brick_bump.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "bar_marble_base.msg" ":defaultTextureList1.tx" -na;
 connectAttr "bar_marble_specularLevel.msg" ":defaultTextureList1.tx" -na;
-// End of bar_ready.ma
+// End of bar.ma
