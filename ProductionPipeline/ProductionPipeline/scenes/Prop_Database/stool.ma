@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: stool.ma
-//Last modified: Thu, Nov 12, 2020 03:49:17 PM
+//Last modified: Thu, Nov 12, 2020 03:53:49 PM
 //Codeset: 1252
 requires maya "2020";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiStandardSurface"
@@ -12,7 +12,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "A7622197-4026-1552-473F-4CA73581ACB2";
+fileInfo "UUID" "764DA663-4FBD-6929-7721-CA9F371E4801";
 createNode transform -n "stool_grp";
 	rename -uid "E838761C-4288-16C1-4AE6-F1B7C001D3B1";
 createNode transform -n "POS" -p "stool_grp";
@@ -9913,22 +9913,21 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "A63C60D8-4FC2-44EB-0CD8-AFA46144410E";
+	rename -uid "4211F81C-4B60-35BE-4E5C-E1B9821495CC";
 	setAttr -s 6 ".lnk";
 	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "3D068D24-4A91-9209-EF0A-538E0B4D184E";
+	rename -uid "B98FBA8C-4025-8513-0312-138311C175C6";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "4B585894-4111-9FA5-014B-30A8E75553EA";
+	rename -uid "CF4671B4-491C-F111-9140-41A8BEFD99E1";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "E0AAA547-4784-BC8C-C796-FA8DBE404F78";
+	rename -uid "D12A78A5-4048-38AA-5DA6-1F903D7A5757";
 	setAttr ".cdl" 3;
 	setAttr -s 4 ".dli[1:3]"  1 2 3;
-	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "D08663C9-466C-A72E-C6B0-4DA7083103A2";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "106D55DE-499E-CC19-B5AD-D2BB6DF26200";
+	rename -uid "53AD33B4-4F49-135E-5CC8-01A861AA514D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "BDAAD8F2-4DD2-C0C3-C371-46A7B9D91C8A";
 	setAttr ".g" yes;
@@ -9982,12 +9981,6 @@ createNode script -n "sceneConfigurationScriptNode";
 createNode objectSet -n "set1";
 	rename -uid "E7FED765-4F74-6F47-FA6E-C0BA25EFF6CE";
 	setAttr ".ihi" 0;
-createNode displayLayer -n "seat_layer";
-	rename -uid "CFBF18F8-4EC9-E8A0-0E02-8BA657626AF7";
-	setAttr ".do" 1;
-createNode displayLayer -n "legs_layer";
-	rename -uid "876B5006-419B-A1DA-8E2C-199759A39FED";
-	setAttr ".do" 2;
 createNode lambert -n "UV_check";
 	rename -uid "3F9DA3DA-43C7-EFCD-5E60-8B819BA8CD60";
 createNode shadingEngine -n "lambert2SG";
@@ -10099,10 +10092,6 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "legs_layer.di" "Left_Leg_geo.do";
-connectAttr "legs_layer.di" "Attachment_geo.do";
-connectAttr "legs_layer.di" "Right_Leg_geo.do";
-connectAttr "seat_layer.di" "stool.do";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -10117,8 +10106,6 @@ relationship "shadowLink" ":lightLinker1" "aiStandardSurface2SG.message" ":defau
 relationship "shadowLink" ":lightLinker1" "aiStandardSurface3SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "layerManager.dli[1]" "seat_layer.id";
-connectAttr "layerManager.dli[3]" "legs_layer.id";
 connectAttr "checker1.oc" "UV_check.c";
 connectAttr "UV_check.oc" "lambert2SG.ss";
 connectAttr "lambert2SG.msg" "materialInfo1.sg";
