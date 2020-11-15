@@ -1,19 +1,17 @@
 //Maya ASCII 2020 scene
-//Name: sofaSmall_17.ma
-//Last modified: Sat, Nov 14, 2020 11:40:42 PM
+//Name: sofaSmall_18.ma
+//Last modified: Sun, Nov 15, 2020 12:22:12 AM
 //Codeset: 1252
 requires maya "2020";
 requires "stereoCamera" "10.0";
 requires "mtoa" "4.0.4.1";
-requires "mtoa" "4.0.4.1";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "36A88E23-470B-FEC5-49EB-9C95C11C0165";
+fileInfo "UUID" "B5C852D2-45AD-4FAA-6270-6594F9A79227";
 createNode transform -n "sofaSmall_grp";
 	rename -uid "A55FB513-4E3B-FA0C-083F-E897E9565FDA";
 	setAttr ".rp" -type "double3" 0 0.58612492131647187 0 ;
@@ -38,6 +36,8 @@ createNode transform -n "DONOTTOUCH" -p "ADJ";
 	setAttr ".sp" -type "double3" 0 0.58612492131647187 0 ;
 createNode transform -n "sofaSmall" -p "DONOTTOUCH";
 	rename -uid "5C93492A-43D8-BDF0-E818-D39C981EB44D";
+	setAttr ".ovdt" 2;
+	setAttr ".ove" yes;
 	setAttr ".rp" -type "double3" 0 1.6663900907240046 0 ;
 	setAttr ".sp" -type "double3" 0 1.6663900907240143 1.865174681370263e-13 ;
 createNode mesh -n "polySurfaceShape2" -p "sofaSmall";
@@ -5074,6 +5074,7 @@ createNode mesh -n "cushion_geoShape" -p "cushion_geo";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "pillow_geo" -p "sofaSmall";
 	rename -uid "148E1756-451D-0C34-F916-9EB7DDA3C4C0";
+	setAttr ".ovdt" 2;
 	setAttr ".rp" -type "double3" -2.9222853466683789 8.3606550704039844 -0.014304637908935547 ;
 	setAttr ".sp" -type "double3" -2.9222853466683789 8.3606550704039844 -0.014304637908935547 ;
 createNode mesh -n "pillow_geoShape" -p "pillow_geo";
@@ -7272,22 +7273,21 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "8AB80604-415C-A180-26B9-D4B4F0756E4B";
+	rename -uid "1965BA5C-40AE-1D1D-4012-809CDB80989F";
 	setAttr -s 8 ".lnk";
 	setAttr -s 8 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "59F81094-4AF0-5FCE-9644-EB81B82BAC63";
+	rename -uid "125B869C-4047-FB92-44F4-1ABB1E825CE6";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "DE1764E9-4EEB-22B3-0855-D09593752FE3";
+	rename -uid "B9B5DCE5-4C3A-9F72-B2F8-9FB255C4C717";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "348F1F4D-400A-F329-7D82-219447293218";
-	setAttr ".cdl" 4;
+	rename -uid "7E9371CD-40C7-D7B4-6EF9-2D8E565073FB";
+	setAttr ".cdl" 2;
 	setAttr -s 5 ".dli[1:4]"  1 2 3 4;
-	setAttr -s 5 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "01E60C92-49E4-DF0B-08CF-09B895C8D0EC";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "1B651F54-4BED-CD59-CDF6-6AB513EED386";
+	rename -uid "AD08BFFD-4429-8234-998F-67964B40F89E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "FF262176-413F-1881-4B5A-E8BAA6B3E93F";
 	setAttr ".g" yes;
@@ -7411,18 +7411,6 @@ createNode checker -n "smallSofaExp_checker1";
 createNode place2dTexture -n "smallSofaExp_place2dTexture1";
 	rename -uid "D69F9E08-421A-036D-5E87-3187A493DFF8";
 	setAttr ".re" -type "float2" 15 15 ;
-createNode displayLayer -n "base_grp";
-	rename -uid "AE293CB5-48F0-BEC8-9FA4-75B81F7F65E1";
-	setAttr ".do" 1;
-createNode displayLayer -n "pillow_grp";
-	rename -uid "89D652B8-43F3-12B1-6E5C-B9BEA1E76A6B";
-	setAttr ".do" 2;
-createNode displayLayer -n "cusion_grp";
-	rename -uid "99E41527-4E20-A78E-E859-249148FBE466";
-	setAttr ".do" 3;
-createNode displayLayer -n "legs_grp";
-	rename -uid "62E4E106-4F31-31EE-8764-1B93D8F9F1E1";
-	setAttr ".do" 4;
 createNode standardSurface -n "redFabric_mat";
 	rename -uid "243B32B2-4298-CCDF-D744-6DBA68B2E34D";
 	setAttr ".sr" 1;
@@ -7547,12 +7535,6 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "legs_grp.di" "leg_backLeft_geo.do";
-connectAttr "legs_grp.di" "leg_backRight_geo.do";
-connectAttr "legs_grp.di" "leg_frontLeft_geo.do";
-connectAttr "legs_grp.di" "leg_frontRight_geo.do";
-connectAttr "cusion_grp.di" "cushion_geo.do";
-connectAttr "pillow_grp.di" "pillow_geo.do";
 connectAttr "groupId9.id" "base_geoShape.iog.og[0].gid";
 connectAttr "standardSurface2SG.mwc" "base_geoShape.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -7625,10 +7607,6 @@ connectAttr "smallSofaExp_uvCheckerTest_mat.oc" "smallSofaExp_lambert2SG.ss";
 connectAttr "smallSofaExp_checker1.oc" "smallSofaExp_uvCheckerTest_mat.c";
 connectAttr "smallSofaExp_place2dTexture1.o" "smallSofaExp_checker1.uv";
 connectAttr "smallSofaExp_place2dTexture1.ofs" "smallSofaExp_checker1.fs";
-connectAttr "layerManager.dli[1]" "base_grp.id";
-connectAttr "layerManager.dli[2]" "pillow_grp.id";
-connectAttr "layerManager.dli[3]" "cusion_grp.id";
-connectAttr "layerManager.dli[4]" "legs_grp.id";
 connectAttr "file2.oc" "redFabric_mat.bc";
 connectAttr "redFabric_mat.oc" "standardSurface2SG.ss";
 connectAttr "cushion_geoShape.iog" "standardSurface2SG.dsm" -na;
@@ -7690,10 +7668,6 @@ connectAttr "leg_backLeft_geoShape.iog" "standardSurface3SG.dsm" -na;
 connectAttr "standardSurface3SG.msg" "materialInfo3.sg";
 connectAttr "sofaLeg_mat.msg" "materialInfo3.m";
 connectAttr "sofaLeg_mat.msg" "materialInfo3.t" -na;
-connectAttr "pillow_grp.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
-connectAttr "legs_grp.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
-		;
 connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
 connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
@@ -7706,13 +7680,9 @@ connectAttr "standardSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.t
 		;
 connectAttr "standardSurface3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 		;
-connectAttr "base_grp.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
-		;
 connectAttr "file2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
 		;
 connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
-		;
-connectAttr "cusion_grp.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
 		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "pillowMudSG.pa" ":renderPartition.st" -na;
@@ -7740,4 +7710,4 @@ connectAttr "cushion_ReflectionMap.msg" ":defaultTextureList1.tx" -na;
 connectAttr "smallSofaExp_checker1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
-// End of sofaSmall_17.ma
+// End of sofaSmall_18.ma
