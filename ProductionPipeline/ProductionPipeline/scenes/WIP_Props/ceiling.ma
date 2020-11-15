@@ -1,0 +1,128 @@
+//Maya ASCII 2020 scene
+//Name: ceiling.ma
+//Last modified: Sun, Nov 15, 2020 10:43:08 AM
+//Codeset: 1252
+requires maya "2020";
+requires "stereoCamera" "10.0";
+requires -nodeType "aiStandardSurface" "mtoa" "4.0.0";
+requires "stereoCamera" "10.0";
+currentUnit -l centimeter -a degree -t film;
+fileInfo "application" "maya";
+fileInfo "product" "Maya 2020";
+fileInfo "version" "2020";
+fileInfo "cutIdentifier" "201911140446-42a737a01c";
+fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
+fileInfo "UUID" "5CEFE41F-4939-7235-308E-7CAA89F23E98";
+createNode transform -n "walls_grp";
+	rename -uid "A7DE8A8D-4B36-A2B2-EFA4-E28BD12051F1";
+createNode transform -n "ceiling_geo" -p "walls_grp";
+	rename -uid "37FCC802-43A4-401C-D166-86B2B77D8D8E";
+	setAttr ".t" -type "double3" 0 0.097746287189085734 0 ;
+	setAttr ".rp" -type "double3" 0 28.469169884625657 0 ;
+	setAttr ".sp" -type "double3" 0 28.469169884625657 0 ;
+createNode mesh -n "ceiling_geoShape" -p "ceiling_geo";
+	rename -uid "9D25DFBB-482F-F3F8-CB6D-EE827030E7C4";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 1 1 1;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[0:3]" -type "float3"  -96.811623 28.469168 96.811623 
+		96.811623 28.469168 96.811623 -96.811623 28.469168 -96.811623 96.811623 28.469168 
+		-96.811623;
+	setAttr -s 4 ".vt[0:3]"  -0.5 0 0.5 0.5 0 0.5 -0.5 0 -0.5 0.5 0 -0.5;
+	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
+	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
+		f 4 0 2 -4 -2
+		mu 0 4 0 1 3 2;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode displayLayer -n "walls_layer";
+	rename -uid "79F40C26-4438-A87C-58B1-8FAFA305BE46";
+	setAttr ".do" 3;
+createNode displayLayerManager -n "layerManager";
+	rename -uid "F2A46B81-4F3E-4ED6-77EE-72A38B5DF59D";
+	setAttr ".cdl" 3;
+	setAttr -s 5 ".dli[1:4]"  4 1 5 3;
+	setAttr -s 5 ".dli";
+createNode materialInfo -n "materialInfo47";
+	rename -uid "96C6E76F-4008-4E99-F6DF-50A535B6B387";
+createNode shadingEngine -n "aiStandardSurface4SG";
+	rename -uid "312B2C8D-473F-A04C-55FA-0FBDD55C50C9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode aiStandardSurface -n "ceiling_texture_mat";
+	rename -uid "220BCCFB-4E8A-9C29-D9F8-A8AE8DF4CF9D";
+	setAttr ".base" 1;
+	setAttr ".specular_roughness" 0.5;
+createNode lightLinker -s -n "lightLinker1";
+	rename -uid "97C5FDAF-45C2-9950-E44A-81BE9B069D9A";
+	setAttr -s 368 ".lnk";
+	setAttr -s 368 ".slnk";
+select -ne :time1;
+	setAttr ".o" 0;
+select -ne :hardwareRenderingGlobals;
+	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
+	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
+		 1 1 1 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 ;
+	setAttr ".fprt" yes;
+select -ne :renderPartition;
+	setAttr -s 368 ".st";
+select -ne :renderGlobalsList1;
+select -ne :defaultShaderList1;
+	setAttr -s 315 ".s";
+select -ne :postProcessList1;
+	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 243 ".u";
+select -ne :defaultRenderingList1;
+	setAttr -s 42 ".r";
+select -ne :lightList1;
+	setAttr -s 12 ".l";
+select -ne :defaultTextureList1;
+	setAttr -s 306 ".tx";
+select -ne :initialShadingGroup;
+	setAttr -s 59 ".dsm";
+	setAttr ".ro" yes;
+	setAttr -s 8 ".gn";
+select -ne :initialParticleSE;
+	setAttr ".ro" yes;
+select -ne :initialMaterialInfo;
+	setAttr -s 11 ".t";
+select -ne :defaultRenderGlobals;
+	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
+	setAttr ".ren" -type "string" "arnold";
+	setAttr ".dss" -type "string" "lambert1";
+select -ne :defaultResolution;
+	setAttr ".pa" 1;
+select -ne :defaultLightSet;
+	setAttr -s 12 ".dsm";
+select -ne :hardwareRenderGlobals;
+	setAttr ".ctrs" 256;
+	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 6 ".sol";
+connectAttr "walls_layer.di" "walls_grp.do";
+connectAttr "layerManager.dli[4]" "walls_layer.id";
+connectAttr "aiStandardSurface4SG.msg" "materialInfo47.sg";
+connectAttr "ceiling_texture_mat.msg" "materialInfo47.m";
+connectAttr "ceiling_texture_mat.msg" "materialInfo47.t" -na;
+connectAttr "ceiling_texture_mat.out" "aiStandardSurface4SG.ss";
+connectAttr "ceiling_geoShape.iog" "aiStandardSurface4SG.dsm" -na;
+relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface4SG.message" ":defaultLightSet.message";
+connectAttr "aiStandardSurface4SG.pa" ":renderPartition.st" -na;
+connectAttr "ceiling_texture_mat.msg" ":defaultShaderList1.s" -na;
+// End of ceiling.ma

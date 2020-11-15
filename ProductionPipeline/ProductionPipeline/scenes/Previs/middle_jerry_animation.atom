@@ -1,0 +1,13 @@
+atomVersion 1.0;
+mayaVersion 2020;
+mayaSceneFile C:/Users/Nabeeha/Documents/GitHub/DS2/ProductionPipeline/ProductionPipeline/scenes/Previs/preVis_middle.rough.ma;
+timeUnit film;
+linearUnit cm;
+angularUnit deg;
+startTime 1;
+endTime 240;
+dagNode {
+  Jerry_rig_Group 1 3;
+  static v visibility 0;
+  { 1 }
+}
