@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
-//Name: wallArt1.ma
-//Last modified: Thu, Nov 19, 2020 10:34:49 PM
+//Name: wallArt.ma
+//Last modified: Fri, Nov 20, 2020 12:11:25 PM
 //Codeset: 1252
 requires maya "2020";
 requires -nodeType "aiOptions" -nodeType "aiStandardSurface" "mtoa" "4.0.4.1";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "1AD60042-4561-0486-A3C5-EF8C51098155";
+fileInfo "UUID" "929EF57B-4FD8-F832-481E-8BB1278738F5";
 createNode transform -n "wallArt_grp";
 	rename -uid "06EF3F7A-4A80-3FD3-0BB7-9997CC8BF548";
 createNode transform -n "POS" -p "wallArt_grp";
@@ -3497,19 +3497,19 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "A6A2C8CE-4CFC-4963-2C55-82ACB1DEB87F";
+	rename -uid "386D817F-4192-EDB5-DBD1-3DA1ED03AD99";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "CDE3DAD8-4273-FB77-36D7-6AA9BD7A417F";
+	rename -uid "73EB9701-4C9F-2DED-ECCD-1A874E961B60";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B3D72197-497D-EBFC-80C8-A0B3DB1D9F8D";
+	rename -uid "5CB9CBDC-42DD-C83C-A44D-3F847E09C3B4";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "86879A84-4456-24B3-E37F-E1B37A407B7F";
+	rename -uid "B6B0E87B-427C-C514-2B6A-058ABDEA80A6";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "8867F52B-468C-E0CF-A995-50BBF9FFA092";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "AAAF86E3-4589-786E-FD50-79A0BBBBD7E6";
+	rename -uid "FD95DC45-437A-2DDE-CE2D-4ABAE3E111EC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E00A089E-4F22-4ADA-5817-52AFE8F4847C";
 	setAttr ".g" yes;
@@ -3560,11 +3560,6 @@ createNode script -n "WallArt_v03:sceneConfigurationScriptNode";
 	rename -uid "ADD69876-4A88-01CC-C42A-6FA8DC04BE17";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
-createNode lambert -n "WallArt_v03:lambert2";
-	rename -uid "CF8ECFBD-459A-3CC3-1652-8B8081F6EC29";
-	setAttr ".dc" 0.78064513206481934;
-	setAttr ".tcf" 0.23870967328548431;
-	setAttr ".trsd" 0.87096774578094482;
 createNode shadingEngine -n "WallArt_v03:lambert2SG";
 	rename -uid "CC5176AC-43EB-7798-12B0-6AACB3D94C30";
 	setAttr ".ihi" 0;
@@ -3576,7 +3571,7 @@ createNode checker -n "WallArt_v03:checker1";
 createNode place2dTexture -n "WallArt_v03:place2dTexture1";
 	rename -uid "6CFE3F53-49A1-095E-A3C0-99AEF2E5ACFA";
 	setAttr ".re" -type "float2" 4 4 ;
-createNode aiStandardSurface -n "WallArt_v03:Frame_texture";
+createNode aiStandardSurface -n "WallArt_texture";
 	rename -uid "25434357-4DE2-8F23-FCF9-4288B3AAF643";
 createNode shadingEngine -n "WallArt_v03:aiStandardSurface1SG";
 	rename -uid "9C00206A-446F-3B74-4868-98A99DBA6EB0";
@@ -3589,7 +3584,7 @@ createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	setAttr ".version" -type "string" "4.0.4.1";
 createNode file -n "WallArt_v03:file1";
 	rename -uid "3424D948-4C99-D346-450B-C4B1991AD052";
-	setAttr ".ftn" -type "string" "C:/Users/ybaan/Documents/maya/projects/Wall Art//sourceimages/Wall_Art_Texture.png";
+	setAttr ".ftn" -type "string" "C:/Users/ybaan/Documents/maya/projects/Wall Art/sourceimages/Wall_Art_Texture.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "WallArt_v03:place2dTexture2";
 	rename -uid "C0683D2F-49FB-1FDA-1C56-24B52628DAB8";
@@ -3606,6 +3601,11 @@ createNode nodeGraphEditorInfo -n "WallArt_v03:hyperShadePrimaryNodeEditorSavedT
 	setAttr ".tgi[0].ni[1].x" 71.428573608398438;
 	setAttr ".tgi[0].ni[1].y" -137.14285278320313;
 	setAttr ".tgi[0].ni[1].nvs" 1923;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "EBB9A9A3-42BC-B985-43F0-4482C210400C";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -330.95236780151544 -323.80951094248991 ;
+	setAttr ".tgi[0].vh" -type "double2" 317.85713022663526 338.09522466054096 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -3619,7 +3619,7 @@ select -ne :renderPartition;
 	setAttr -s 4 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 7 ".s";
+	setAttr -s 6 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -3650,21 +3650,16 @@ relationship "shadowLink" ":lightLinker1" "WallArt_v03:lambert2SG.message" ":def
 relationship "shadowLink" ":lightLinker1" "WallArt_v03:aiStandardSurface1SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "WallArt_v03:checker1.oc" "WallArt_v03:lambert2.c";
-connectAttr "WallArt_v03:lambert2.oc" "WallArt_v03:lambert2SG.ss";
 connectAttr "WallArt_v03:lambert2SG.msg" "WallArt_v03:materialInfo1.sg";
-connectAttr "WallArt_v03:lambert2.msg" "WallArt_v03:materialInfo1.m";
-connectAttr "WallArt_v03:checker1.msg" "WallArt_v03:materialInfo1.t" -na;
 connectAttr "WallArt_v03:place2dTexture1.o" "WallArt_v03:checker1.uv";
 connectAttr "WallArt_v03:place2dTexture1.ofs" "WallArt_v03:checker1.fs";
-connectAttr "WallArt_v03:file1.oc" "WallArt_v03:Frame_texture.base_color";
-connectAttr "WallArt_v03:Frame_texture.out" "WallArt_v03:aiStandardSurface1SG.ss"
-		;
+connectAttr "WallArt_v03:file1.oc" "WallArt_texture.base_color";
+connectAttr "WallArt_texture.out" "WallArt_v03:aiStandardSurface1SG.ss";
 connectAttr "wallArtShape.iog" "WallArt_v03:aiStandardSurface1SG.dsm" -na;
 connectAttr "WallArt_v03:aiStandardSurface1SG.msg" "WallArt_v03:materialInfo2.sg"
 		;
-connectAttr "WallArt_v03:Frame_texture.msg" "WallArt_v03:materialInfo2.m";
-connectAttr "WallArt_v03:Frame_texture.msg" "WallArt_v03:materialInfo2.t" -na;
+connectAttr "WallArt_texture.msg" "WallArt_v03:materialInfo2.m";
+connectAttr "WallArt_texture.msg" "WallArt_v03:materialInfo2.t" -na;
 connectAttr ":defaultColorMgtGlobals.cme" "WallArt_v03:file1.cme";
 connectAttr ":defaultColorMgtGlobals.cfe" "WallArt_v03:file1.cmcf";
 connectAttr ":defaultColorMgtGlobals.cfp" "WallArt_v03:file1.cmcp";
@@ -3693,8 +3688,7 @@ connectAttr "WallArt_v03:place2dTexture2.msg" "WallArt_v03:hyperShadePrimaryNode
 		;
 connectAttr "WallArt_v03:lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "WallArt_v03:aiStandardSurface1SG.pa" ":renderPartition.st" -na;
-connectAttr "WallArt_v03:lambert2.msg" ":defaultShaderList1.s" -na;
-connectAttr "WallArt_v03:Frame_texture.msg" ":defaultShaderList1.s" -na;
+connectAttr "WallArt_texture.msg" ":defaultShaderList1.s" -na;
 connectAttr "WallArt_v03:place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na
 		;
 connectAttr "WallArt_v03:place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na
@@ -3702,4 +3696,4 @@ connectAttr "WallArt_v03:place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "WallArt_v03:checker1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "WallArt_v03:file1.msg" ":defaultTextureList1.tx" -na;
-// End of wallArt1.ma
+// End of wallArt.ma
