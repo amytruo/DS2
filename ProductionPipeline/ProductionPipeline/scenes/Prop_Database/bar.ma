@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: bar.ma
-//Last modified: Thu, Nov 19, 2020 09:43:29 PM
+//Last modified: Thu, Nov 19, 2020 10:32:40 PM
 //Codeset: 1252
 requires maya "2020";
 requires -nodeType "ilrOptionsNode" -nodeType "ilrUIOptionsNode" -nodeType "ilrBakeLayerManager"
@@ -16,7 +16,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "CC7C570F-4958-0E8F-7033-5497782E1020";
+fileInfo "UUID" "37A58460-47D0-D702-F26C-4C921FF89FE5";
 fileInfo "license" "education";
 createNode transform -n "bar_grp";
 	rename -uid "7F3C35DA-436C-29EA-A221-56A60322AC56";
@@ -214,8 +214,7 @@ createNode mesh -n "LED_light_geoShape" -p "LED_light_geo";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-	setAttr ".dr" 3;
-	setAttr ".dsm" 2;
+	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "light_LED_light_geo" -p "LED_light_geo";
 	rename -uid "BC39BF24-4B77-7BF2-EA12-D2A16B06ABB1";
@@ -225,7 +224,7 @@ createNode aiMeshLight -n "light_LED_light_geoShape" -p "light_LED_light_geo";
 	setAttr ".csh" no;
 	setAttr ".rcsh" no;
 	setAttr ".showOriginalMesh" yes;
-	setAttr ".sc" -type "float3" 1 0 1 ;
+	setAttr ".sc" -type "float3" 1 0.25810003 0 ;
 	setAttr ".light_visible" yes;
 	setAttr ".ai_exposure" 2;
 	setAttr ".ai_normalize" no;
@@ -7492,23 +7491,23 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "920D9E5E-4E3D-341E-23A9-E387B4F9CA03";
+	rename -uid "7A054F32-4BA7-E854-961F-B6BCB4E0ACD8";
 	setAttr -s 66 ".lnk";
 	setAttr -s 66 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "210A3225-4E3F-64D7-3AD8-88B70552840C";
+	rename -uid "BE7F7E05-4888-A2F4-A4B9-59BBF6FD33B0";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D6EF7E54-46D8-B56D-FEBB-A0AB62532ED1";
+	rename -uid "69F9D89B-478F-530F-7C92-6D85BB971A3A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "D03567D8-46C2-4AA5-EF0D-D78206ECDB80";
+	rename -uid "B07C8B7B-4345-A51A-8AE9-0986766A66E7";
 	setAttr ".cdl" 3;
 	setAttr -s 3 ".dli[1:2]"  2 3;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "7D2534AB-4942-6791-269E-F3B6FD1E8E5A";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5E1499B7-4205-E99F-2920-6EB2482023F0";
+	rename -uid "4976616C-4297-616E-56E6-B2823C84E0DF";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "ACD587B4-45D1-1FBE-90AB-3A81491142DF";
 	setAttr ".g" yes;
@@ -8361,9 +8360,9 @@ createNode materialInfo -n "materialInfo15";
 	rename -uid "CC4F7997-49C6-9857-F25D-C5901B6E046D";
 createNode aiStandardSurface -n "LED_light_texture_mat";
 	rename -uid "448FF1FE-4EDA-080F-52BF-0D850EB243AB";
-	setAttr ".base_color" -type "float3" 1 0 1 ;
+	setAttr ".base_color" -type "float3" 1 0.25810003 0 ;
 	setAttr ".emission" 1;
-	setAttr ".emission_color" -type "float3" 1 0 1 ;
+	setAttr ".emission_color" -type "float3" 1 0.25810003 0 ;
 createNode shadingEngine -n "aiStandardSurface10SG";
 	rename -uid "BDCB3B42-4D07-5433-094E-FFA009A4D1AB";
 	setAttr ".ihi" 0;
