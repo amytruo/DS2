@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: neonLight.ma
-//Last modified: Fri, Nov 20, 2020 10:17:06 PM
+//Last modified: Fri, Nov 20, 2020 10:16:45 PM
 //Codeset: 1252
 requires maya "2020";
 requires "stereoCamera" "10.0";
@@ -14,7 +14,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "201911140446-42a737a01c";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "8AC9E6EE-4DC8-A3BA-D3C5-3DB130559C66";
+fileInfo "UUID" "21C69434-41F9-2205-CDE8-7ABE2880F503";
 createNode transform -n "neonLight_grp";
 	rename -uid "619C9323-4163-4C35-FF1D-F48D30E82F41";
 createNode transform -n "POS" -p "neonLight_grp";
@@ -19860,10 +19860,10 @@ createNode shadingEngine -n "aiStandardSurface4SG";
 createNode materialInfo -n "materialInfo5";
 	rename -uid "DD5B8473-4E31-026A-8A48-238EC01E13A2";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "2F32783E-442D-0032-329B-4A9322886A3C";
+	rename -uid "45BE68E7-4A57-8310-D703-76A6C5D5BC8F";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -226.19046720247462 -420.3324455506833 ;
-	setAttr ".tgi[0].vh" -type "double2" 577.38092943789559 432.23720698239237 ;
+	setAttr ".tgi[0].vl" -type "double2" -226.15283720944328 -419.04760239616337 ;
+	setAttr ".tgi[0].vh" -type "double2" 576.11861421711944 432.14283997104349 ;
 	setAttr -s 5 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" -578.5714111328125;
 	setAttr ".tgi[0].ni[0].y" 294.28570556640625;
